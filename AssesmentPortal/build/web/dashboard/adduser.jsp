@@ -134,7 +134,7 @@
                                     <td><%=bean.getUserid() %></td>
                                     <td><%=bean.getPassword()%></td>
                                     <td><%= bean.getGroupname() %></td>
-                                    <td><%= bean.getGroupname() %></td>
+                                    <td><%= bean.getBranchname() %></td>
                                     <td><a href="#">del</a> | <a href="#">edit</a></td>
                                 </tr>
                                   <%

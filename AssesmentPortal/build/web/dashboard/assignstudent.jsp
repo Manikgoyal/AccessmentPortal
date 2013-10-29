@@ -3,6 +3,7 @@
     Created on : 26 Oct, 2013, 4:09:14 PM
     Author     : manik
 --%>
+<%@page import="com.arcadian.loginbeans.ClassesBean"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.arcadian.loginbeans.UserDetailBean"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -23,6 +24,25 @@
         <link href="<%=request.getContextPath()%>/dashboard/dashcss/bootstrap-responsive.min.css" rel="stylesheet">
         <link href="<%=request.getContextPath()%>/dashboard/dashcss/customstylesheet.css" rel="stylesheet">
         <link href="<%=request.getContextPath()%>/dashboard/dashcss/button.css" rel="stylesheet" >
+        
+        
+        
+        <script>
+           var classid;
+            
+            function getClass(classid){
+                this.classid=classid;
+                
+            }
+            
+        function f1(studentid){
+            
+            document.location.href="AssignStudentServlet?classid="+classid+"&studentid="+studentid;
+        }
+            
+        </script>
+            
+        
     </head>
     <body>
         <div class="wrapper1">
@@ -65,85 +85,61 @@
                 <div class="prof">   
                     <h4>Users</h4>
                     <section class="centr">
-
-                        <form action="AddUserServlet" method="get" name="adduser">
-                            <table class="box-table-a">
-                                <caption>New User</caption>
-                                <thead>
-                                    <tr>
-                                        <th>Username</th>
-                                        <th>Password</th>
-                                        <th>Department</th>
-                                        <th>User Group</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <input type="text" name="username" required/></td>
-                                        <td><input type="text" name="password" required/></td>
-                                        <td><select name="department">
-                                                <option>Select Branch</option>
-                                                <c:forEach items="${alstbranchName}" var="branches">
-                                                    <option value="${branches.branchid}">${branches.branchname}</option>
-                                                </c:forEach>
-                                                </select></td>
-                                        <td><select name="groupname">
-                                                <option>Select Group</option>
-                                                <c:forEach items="${alstgroupName}" var="grpname">
-                                                    <option value="${grpname.groupid}">${grpname.groupname}</option>
-                                                </c:forEach>
-
-
-                                            </select></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <a href="#" onclick="JAVASCRIPT:adduser.submit()"  class="sbtnSubmit">Add</a>
-                                        </td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </form>
-
+                        
                         <table class="box-table-a">
-                            <caption>User List</caption>
+                            <caption>Student List</caption>
                             <thead>
                                 <tr>
-                                    <th scope="col">Id</th>
+                                    <th scope="col">S.NO</th>
                                     <th scope="col">UserName</th>
-                                    <th scope="col">Password</th>
-                                    <th scope="col">User group</th>
-                                    <th scope="col">Department</th>
+                                    <th scope="col">Class</th>
                                     <th scope="col">Actions</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <%
-                                ArrayList<UserDetailBean> alst=(ArrayList<UserDetailBean>)request.getAttribute("alstuser");
-                                    for(int i=0;i<alst.size();i++)
-                                    {
-                                        UserDetailBean bean=(UserDetailBean)alst.get(i);
-                                %>
-                                
-                                <tr>
-                                    <td>1</td>
-                                    <td><%=bean.getUserid() %></td>
-                                    <td><%=bean.getPassword()%></td>
-                                    <td><%= bean.getGroupname() %></td>
-                                    <td><%= bean.getBranchname() %></td>
-                                    <td><a href="#">del</a> | <a href="#">edit</a></td>
-                                </tr>
-                                  <%
-                                    }
-                                  %>  
                             
+                            <tbody>
+                                <c:forEach items="${alstassignStudent}" var="assignstudent" varStatus="sno">
+                                    <tr>
+                                        <td>${sno.index+1}</td>
+                                        <td>${assignstudent}</td>
+                                        <td><select name="selClass" id="selClass" onchange="getClass(this.value)">
+                                                <option>Select Class</option>
+                                                <c:forEach items="${alstClassList}" var="classlist">
+                                                    <option value="${classlist.classid}">${classlist.classid}</option>
+                                    </c:forEach>
+                                            </select></td>
+                                            <td><a href="#" onclick="f1('${assignstudent}')" >Assign Student</a></td>
+                                    </tr>
+                                </c:forEach>
                             </tbody>
+                            
                         </table>
 
+                        
+                        
+                         <table class="box-table-a">
+                            <caption>Assigned List</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">S.NO</th>
+                                    <th scope="col">UserName</th>
+                                    <th scope="col">Class</th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            
+                            <tbody>
+                                <c:forEach items="${alstAssignedStudent}" var="assignedstudent" varStatus="sno">
+                                    <tr>
+                                        <td>${sno.index+1}</td>
+                                        <td>${assignedstudent.userid}</td>
+                                        <td>${assignedstudent.classid}</td>
+                                            <td>Assign Student Done</td>
+                                    </tr>
+                                </c:forEach>
+                            </tbody>
+                            
+                        </table>
 
                     </section>
                 </div>
@@ -154,3 +150,4 @@
         </div>
     </body>
 </html>
+

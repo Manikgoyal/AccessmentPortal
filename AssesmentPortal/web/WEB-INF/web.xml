@@ -16,6 +16,10 @@
         <servlet-name>SubjectAjaxServlet</servlet-name>
         <servlet-class>com.arcadian.loginservlet.SubjectAjaxServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AssignStudentServlet</servlet-name>
+        <servlet-class>com.arcadian.loginservlet.AssignStudentServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
@@ -36,6 +40,10 @@
         <param-name>tempfile.dir</param-name>
         <param-value>tmpfiles</param-value>
     </context-param>
+    <servlet-mapping>
+        <servlet-name>AssignStudentServlet</servlet-name>
+        <url-pattern>/AssignStudentServlet</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
