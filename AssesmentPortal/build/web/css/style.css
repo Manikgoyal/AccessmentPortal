@@ -1,0 +1,119 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+
+
+
+
+body {
+
+ background-color: #edefee; font-family:'Open Sans', sans-serif;
+
+}
+
+
+
+
+
+
+
+/*------------------------------------------------
+
+                    typography
+
+--------------------------------------------------*/
+
+img{ border:none;}
+
+h2 {
+
+	font-family: 'Open Sans', sans-serif;
+
+	font-weight: 900;
+
+	font-size: 24px;
+    color: #fff;
+
+}
+
+
+
+h3 {
+
+	font-family: 'Open Sans', sans-serif;
+
+	font-weight: 400;
+
+	font-size: 22px;
+
+	text-transform: uppercase;
+
+	color: #4e4e4e;
+
+}
+
+
+
+h4 {
+
+	font-family: 'Open Sans', sans-serif;
+
+	font-weight: 400;
+
+	font-size: 18px;
+
+	color: #222;
+
+}
+
+
+
+p {
+
+	/*font-family:'arial', sans-serif;*/
+
+	font-weight: semi-bold;
+
+	font-size: 14px;
+
+    color: #fff;
+
+	font-family:'Open Sans', sans-serif;
+
+}
+
+
+
+a:link {
+
+	text-decoration: none;
+
+	font-family: 'Open Sans', sans-serif;
+
+}
+.wrapper{ width:908px; margin:0px auto;}
+
+.top_logo{ text-align:center;margin-top: 51px;
+margin-bottom: 39px;}
+
+.login{ background:url(../images/loginbg.jpg) no-repeat; width:906px; height:375px;}
+
+.loginleft h2{padding:41px 0 0 40px;}
+.loginleft{ float:left; width:413px; background:url(../images/border.jpg) no-repeat right 40px;}
+.loginleft ul{ list-style:none;}
+.loginleft li{ padding:10px 0 0 0;}
+
+.loginrgt{ padding:0 0 0 10px;}
+.loginrgt h2{padding:41px 0 0 17px; float:left; width:430px;}
+form.enquiry-form{ float:left; margin:0 0 0 15px;}
+input[type=name], input[type=text], input[type=email], input[type=password], input.text, textarea { width:355px; height:29px; padding:0 0 0 10px; color:#1fa2e0; background-color:#c7e6f5; border:none; font-weight:bold;}
+select{width:369px;
+height: 39px;
+padding: 0 0 0 10px;
+background-color: #c7e6f5;
+border: none;
+color: #1fa2e0; font-weight:bold;}
+input[type=checkbox]{ float:left;}
+p.checkbox{ float:left; width:251px;}
+input[type=submit]{ background:url(../images/signin.png) no-repeat; width:111px; height:36px; border:none; color:#fff; margin:9px 0 0 0; cursor:pointer;}

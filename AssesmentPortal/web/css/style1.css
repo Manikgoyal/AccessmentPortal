@@ -1,0 +1,99 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+
+
+
+
+body {
+
+ background:url(../images/body_bg.jpg) repeat; font-family:'Open Sans', sans-serif; margin:0px auto;
+
+}
+
+
+
+
+
+
+
+/*------------------------------------------------
+
+                    typography
+
+--------------------------------------------------*/
+
+img{ border:none;}
+
+h2 {
+
+	font-family: 'Open Sans', sans-serif;
+
+	font-weight: 900;
+
+	font-size: 24px;
+    color: #fff;
+
+}
+
+
+
+h3 {
+
+	font-family: 'Open Sans', sans-serif;
+
+	font-weight: 400;
+
+	font-size: 22px;
+
+	text-transform: uppercase;
+
+	color: #4e4e4e;
+
+}
+
+
+
+h4 {
+
+	font-family: 'Open Sans', sans-serif;
+
+	font-weight: 400;
+
+	font-size: 18px;
+
+	color: #222;
+
+}
+
+
+
+p {
+
+	/*font-family:'arial', sans-serif;*/
+
+	font-weight: semi-bold;
+
+	font-size: 14px;
+
+    color: #fff;
+
+	font-family:'Open Sans', sans-serif;
+
+}
+
+
+
+a:link {
+
+	text-decoration: none;
+
+	font-family: 'Open Sans', sans-serif;
+
+}
+
+.wrapper{ width:93%; margin:0px auto;}
+header.main_header{ background:url(../images/header_img.jpg) repeat-x;}
+img.logo{ float:left; padding:9px 0 0 0;}
+input.search{ background:url(../images/srch_img.png) no-repeat; width:448px; height:29px;}
