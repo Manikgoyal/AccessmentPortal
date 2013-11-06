@@ -22,22 +22,18 @@
 <link href="dashcss/bootstrap-responsive.min.css" rel="stylesheet">
 <link href="dashcss/customstylesheet.css" rel="stylesheet">
 
+
+<style>
+    #imgid{
+        height: 40px;
+    }
+</style>
+
 </head>
  <body>
  <div class="wrapper1">
    <div class="headerinner clearfix">
-    <header class="row-fluid">
-        <article id="innlogo" class="span3"><a href="#"><img src="img/logo.png" alt="" title="logo"></a></article>
-      <article id="inptxt" class="span4"><input type="text" placeholder="Search" class="input-block-level" id="inputNew"></article>
-      <article id="transforming" class="span5">
-          <ul>
-              <li><img src="img/home_img.jpg" alt="" title=""></li>   
-              <li><img src="img/chat_img.jpg" alt="" title=""></li>
-              <li><img src="img/percent.jpg" alt="" title=""></li>
-          </ul>
-      
-      </article>
-     </header>
+       <%@include file="header.jsp" %>
    </div>
      
       <div class="leftsec clearfix">
@@ -47,14 +43,48 @@
     
       <section class="adminmenuwrap clearfix">
           <section class="profilpc">
-         <img src="img/profpic.png" alt="">
-         </section>
+             
+              
+              <a href="#"><img src="img/profpic.png" alt="" style="height: 100px; padding: 20px;" /><p style="padding: 0px 0px 0px 30px;"><%=session.getAttribute("username")%></p></a>
+         
+              
+          </section>
        <ul>
-           <li><p><img src="img/dashome.png" alt=""></p><a href="#">Dashboard</a></li>
-           <li><p><img src="img/ui.png" alt=""></p><a href="#">UI Elements</a></li>
-           <li><p><img src="img/input.png" alt=""></p><a href="#">Input</a></li>
-           <li><p><img src="img/input.png" alt=""></p><a href="#">Input</a></li>
-           <li><p><img src="img/input.png" alt=""></p><a href="#">Input</a></li>
+           <%
+            ArrayList alst=(ArrayList)session.getAttribute("allowed_permissions");
+     
+            for(int i=0;i<alst.size();i++){
+            
+                PermissionsBean bean=(PermissionsBean)alst.get(i);
+            
+                if(
+                        bean.getPermissionname().equalsIgnoreCase("Assign Student")||
+                        bean.getPermissionname().equalsIgnoreCase("course content") ||
+                        bean.getPermissionname().equalsIgnoreCase("lectures")||
+                        bean.getPermissionname().equalsIgnoreCase("attendance")||
+                        bean.getPermissionname().equalsIgnoreCase("assignments")||
+                        bean.getPermissionname().equalsIgnoreCase("tests")||
+                        bean.getPermissionname().equalsIgnoreCase("mail")||
+                        bean.getPermissionname().equalsIgnoreCase("grades")||
+                        bean.getPermissionname().equalsIgnoreCase("add user") ||
+                        bean.getPermissionname().equalsIgnoreCase("Assign Lecturer")||
+                        bean.getPermissionname().equalsIgnoreCase("View Test") ||
+                        bean.getPermissionname().equalsIgnoreCase("Approve Test")||
+                        bean.getPermissionname().equalsIgnoreCase("view assignments")
+                        ){
+                
+                
+            %>
+           
+           
+            <li><p><img src="dashboardicons/<%= bean.getPermissionname()%>.png" alt="" id="imgid"></p><a href="../<%= bean.getServletname()%>Servlet"><%= bean.getPermissionname()%></a></li>
+          
+       
+       <%
+            }
+            
+            }
+            %>
        </ul>
      </section>
     
@@ -65,15 +95,26 @@
          
          <ul>
          <%
-            ArrayList alst=(ArrayList)session.getAttribute("allowed_permissions");
-     
+       
             for(int i=0;i<alst.size();i++){
             
                 PermissionsBean bean=(PermissionsBean)alst.get(i);
             
-                if(bean.getPermissionname().equalsIgnoreCase("course content") ||bean.getPermissionname().equalsIgnoreCase("lectures")||bean.getPermissionname().equalsIgnoreCase("attendance")
-                        ||bean.getPermissionname().equalsIgnoreCase("assignments")||bean.getPermissionname().equalsIgnoreCase("tests")||bean.getPermissionname().equalsIgnoreCase("mail")
-                        ||bean.getPermissionname().equalsIgnoreCase("grades")||bean.getPermissionname().equalsIgnoreCase("add user")){
+                if(
+                        bean.getPermissionname().equalsIgnoreCase("view assignments")||
+                        bean.getPermissionname().equalsIgnoreCase("course content") ||
+                        bean.getPermissionname().equalsIgnoreCase("lectures")||
+                        bean.getPermissionname().equalsIgnoreCase("attendance")||
+                        bean.getPermissionname().equalsIgnoreCase("assignments")||
+                        bean.getPermissionname().equalsIgnoreCase("tests")||
+                        bean.getPermissionname().equalsIgnoreCase("mail")||
+                        bean.getPermissionname().equalsIgnoreCase("grades")||
+                        bean.getPermissionname().equalsIgnoreCase("add user") ||
+                        bean.getPermissionname().equalsIgnoreCase("Assign Student")||
+                        bean.getPermissionname().equalsIgnoreCase("Assign Lecturer")||
+                        bean.getPermissionname().equalsIgnoreCase("View Test") ||
+                        bean.getPermissionname().equalsIgnoreCase("Approve Test")
+                        ){
                 
                 
             %>
@@ -86,9 +127,6 @@
             
             }
             %>    
-             
-             
-             
          </ul>  
          
      </div> 
