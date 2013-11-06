@@ -71,9 +71,20 @@
             
                 PermissionsBean bean=(PermissionsBean)alst.get(i);
             
-                if(bean.getPermissionname().equalsIgnoreCase("course content") ||bean.getPermissionname().equalsIgnoreCase("lectures")||bean.getPermissionname().equalsIgnoreCase("attendance")
-                        ||bean.getPermissionname().equalsIgnoreCase("assignments")||bean.getPermissionname().equalsIgnoreCase("tests")||bean.getPermissionname().equalsIgnoreCase("mail")
-                        ||bean.getPermissionname().equalsIgnoreCase("grades")||bean.getPermissionname().equalsIgnoreCase("add user") ||bean.getPermissionname().equalsIgnoreCase("Assign Student")){
+                if(
+                        bean.getPermissionname().equalsIgnoreCase("course content") ||
+                        bean.getPermissionname().equalsIgnoreCase("lectures")||
+                        bean.getPermissionname().equalsIgnoreCase("attendance")||
+                        bean.getPermissionname().equalsIgnoreCase("assignments")||
+                        bean.getPermissionname().equalsIgnoreCase("tests")||
+                        bean.getPermissionname().equalsIgnoreCase("mail")||
+                        bean.getPermissionname().equalsIgnoreCase("grades")||
+                        bean.getPermissionname().equalsIgnoreCase("add user") ||
+                        bean.getPermissionname().equalsIgnoreCase("Assign Student")||
+                        bean.getPermissionname().equalsIgnoreCase("Assign Lecturer")||
+                        bean.getPermissionname().equalsIgnoreCase("View Test") ||
+                        bean.getPermissionname().equalsIgnoreCase("Approve Test")
+                        ){
                 
                 
             %>

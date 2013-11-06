@@ -29,10 +29,8 @@
         
         <script>
            var classid;
-            
             function getClass(classid){
                 this.classid=classid;
-                
             }
             
         function f1(studentid){

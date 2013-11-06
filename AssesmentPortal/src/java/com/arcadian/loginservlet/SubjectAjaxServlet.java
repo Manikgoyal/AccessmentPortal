@@ -48,6 +48,8 @@ public class SubjectAjaxServlet extends HttpServlet {
             
             request.setAttribute("alstSubject", alstSubject);
             
+            
+            
             RequestDispatcher dispatcher=request.getRequestDispatcher("pages/getsubid.jsp");
             dispatcher.forward(request, response);
             

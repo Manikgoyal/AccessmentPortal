@@ -20,6 +20,58 @@
         <servlet-name>AssignStudentServlet</servlet-name>
         <servlet-class>com.arcadian.loginservlet.AssignStudentServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AssignLecturerServlet</servlet-name>
+        <servlet-class>com.arcadian.loginservlet.AssignLecturerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MailServlet</servlet-name>
+        <servlet-class>com.arcadian.loginservlet.MailServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LecturerSubjectAjaxServlet</servlet-name>
+        <servlet-class>com.arcadian.loginservlet.LecturerSubjectAjaxServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewClassAttendanceServlet</servlet-name>
+        <servlet-class>com.arcadian.loginservlet.ViewClassAttendanceServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewIndividualAttendanceServlet</servlet-name>
+        <servlet-class>com.arcadian.loginservlet.ViewIndividualAttendanceServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LecturesServlet</servlet-name>
+        <servlet-class>com.arcadian.loginservlet.LecturesServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AssignmentsServlet</servlet-name>
+        <servlet-class>com.arcadian.loginservlet.AssignmentsServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LecturerServletAjax</servlet-name>
+        <servlet-class>com.arcadian.loginservlet.LecturerServletAjax</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TestsServlet</servlet-name>
+        <servlet-class>com.arcadian.loginservlet.TestsServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewTestServlet</servlet-name>
+        <servlet-class>com.arcadian.loginservlet.ViewTestServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletQuestionListAjaxServlet</servlet-name>
+        <servlet-class>com.arcadian.loginservlet.ServletQuestionListAjaxServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ApproveTestServlet</servlet-name>
+        <servlet-class>com.arcadian.loginservlet.ApproveTestServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>StudentTestsServlet</servlet-name>
+        <servlet-class>com.arcadian.loginservlet.StudentTestsServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
@@ -43,6 +95,58 @@
     <servlet-mapping>
         <servlet-name>AssignStudentServlet</servlet-name>
         <url-pattern>/AssignStudentServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AssignLecturerServlet</servlet-name>
+        <url-pattern>/AssignLecturerServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MailServlet</servlet-name>
+        <url-pattern>/MailServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LecturerSubjectAjaxServlet</servlet-name>
+        <url-pattern>/LecturerSubjectAjaxServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewClassAttendanceServlet</servlet-name>
+        <url-pattern>/ViewClassAttendanceServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewIndividualAttendanceServlet</servlet-name>
+        <url-pattern>/ViewIndividualAttendanceServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LecturesServlet</servlet-name>
+        <url-pattern>/LecturesServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AssignmentsServlet</servlet-name>
+        <url-pattern>/AssignmentsServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LecturerServletAjax</servlet-name>
+        <url-pattern>/LecturerServletAjax</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TestsServlet</servlet-name>
+        <url-pattern>/TestsServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewTestServlet</servlet-name>
+        <url-pattern>/ViewTestServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletQuestionListAjaxServlet</servlet-name>
+        <url-pattern>/ServletQuestionListAjaxServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ApproveTestServlet</servlet-name>
+        <url-pattern>/ApproveTestServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>StudentTestsServlet</servlet-name>
+        <url-pattern>/StudentTestsServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
