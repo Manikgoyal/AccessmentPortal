@@ -72,6 +72,22 @@
         <servlet-name>StudentTestsServlet</servlet-name>
         <servlet-class>com.arcadian.loginservlet.StudentTestsServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DashboardServlet</servlet-name>
+        <servlet-class>com.arcadian.loginservlet.DashboardServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>com.arcadian.loginservlet.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>StudentAssignmentServlet</servlet-name>
+        <servlet-class>com.arcadian.loginservlet.StudentAssignmentServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewAssignmentServlet</servlet-name>
+        <servlet-class>com.arcadian.loginservlet.ViewAssignmentServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
@@ -147,6 +163,22 @@
     <servlet-mapping>
         <servlet-name>StudentTestsServlet</servlet-name>
         <url-pattern>/StudentTestsServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DashboardServlet</servlet-name>
+        <url-pattern>/DashboardServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/LogoutServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>StudentAssignmentServlet</servlet-name>
+        <url-pattern>/StudentAssignmentServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewAssignmentServlet</servlet-name>
+        <url-pattern>/ViewAssignmentServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

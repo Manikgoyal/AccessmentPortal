@@ -44,18 +44,7 @@
     <body>
         <div class="wrapper1">
             <div class="headerinner clearfix">
-                <header class="row-fluid">
-                    <article id="innlogo" class="span3"><a href="#"><img src="<%=request.getContextPath()%>/dashboard/img/logo.png" alt="" title="logo"></a></article>
-                    <article id="inptxt" class="span4"><input type="text" placeholder="Search" class="input-block-level" id="inputNew"></article>
-                    <article id="transforming" class="span5">
-                        <ul>
-                            <li><img src="<%=request.getContextPath()%>/dashboard/img/home_img.jpg" alt="" title=""></li>   
-                            <li><img src="<%=request.getContextPath()%>/dashboard/img/chat_img.jpg" alt="" title=""></li>
-                            <li><img src="<%=request.getContextPath()%>/dashboard/img/percent.jpg" alt="" title=""></li>
-                        </ul>
-
-                    </article>
-                </header>
+                <%@include file="header.jsp" %>
             </div>
 
             <div class="leftsec clearfix">
@@ -63,19 +52,7 @@
                 <div class="clearfix"></div>
                 <div id="adminmenuback"></div>
 
-                <section class="adminmenuwrap clearfix">
-                    <section class="profilpc">
-                        <img src="<%=request.getContextPath()%>/dashboard/img/profpic.png" alt="">
-                    </section>
-                    <ul>
-                        <li><p><img src="<%=request.getContextPath()%>/dashboard/img/dashome.png" alt=""></p><a href="#">Dashboard</a></li>
-                        <li><p><img src="<%=request.getContextPath()%>/dashboard/img/ui.png" alt=""></p><a href="#">UI Elements</a></li>
-                        <li><p><img src="<%=request.getContextPath()%>/dashboard/img/input.png" alt=""></p><a href="#">Input</a></li>
-                        <li><p><img src="img/input.png" alt=""></p><a href="#">Input</a></li>
-                        <li><p><img src="img/input.png" alt=""></p><a href="#">Input</a></li>
-                    </ul>
-                </section>
-
+                <%@include file="leftpanel.jsp" %>
             </div>
 
             <div class="centersec clearfix">
