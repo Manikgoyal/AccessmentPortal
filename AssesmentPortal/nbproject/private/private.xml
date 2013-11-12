@@ -3,12 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/manik/Documents/NetBeansProjects/strutsdemos/AssesmentPortal/src/java/com/arcadian/loginbeans/UserDetailBean.java</file>
-            <file>file:/C:/Users/manik/Documents/NetBeansProjects/strutsdemos/AssesmentPortal/src/java/com/arcadian/loginservlet/LoginServlet.java</file>
-            <file>file:/C:/Users/manik/Documents/NetBeansProjects/strutsdemos/AssesmentPortal/src/java/com/arcadian/logindatalayer/AddUserService.java</file>
-            <file>file:/C:/Users/manik/Documents/NetBeansProjects/strutsdemos/AssesmentPortal/src/java/com/arcadian/loginservlet/AddUserServlet.java</file>
-            <file>file:/C:/Users/manik/Documents/NetBeansProjects/strutsdemos/AssesmentPortal/src/java/com/arcadian/logindatalayer/LoginService.java</file>
-            <file>file:/C:/Users/manik/Documents/NetBeansProjects/strutsdemos/AssesmentPortal/web/dashboard/adduser.jsp</file>
+            <file>file:/C:/Users/manik/Documents/NetBeansProjects/strutsdemos/AssesmentPortal/src/java/com/arcadian/logindatalayer/TestsService.java</file>
+            <file>file:/C:/Users/manik/Documents/NetBeansProjects/strutsdemos/AssesmentPortal/src/java/com/arcadian/loginservlet/QuestionServlet.java</file>
+            <file>file:/C:/Users/manik/Documents/NetBeansProjects/strutsdemos/AssesmentPortal/web/dashboard/testview.jsp</file>
+            <file>file:/C:/Users/manik/Documents/NetBeansProjects/strutsdemos/AssesmentPortal/src/java/com/arcadian/loginbeans/TestDataBean.java</file>
         </group>
     </open-files>
 </project-private>
