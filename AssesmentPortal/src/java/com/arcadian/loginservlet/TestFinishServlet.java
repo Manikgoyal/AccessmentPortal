@@ -5,12 +5,10 @@
  */
 package com.arcadian.loginservlet;
 
-import com.arcadian.loginbeans.TestNoticeBean;
 import com.arcadian.logindatalayer.TestsService;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,7 +19,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author manik
  */
-public class StudentTestsServlet extends HttpServlet {
+public class TestFinishServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP
@@ -37,35 +35,49 @@ public class StudentTestsServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+
             HttpSession session=request.getSession();
-            String username=(String)session.getAttribute("username");
-            TestsService service=new TestsService();
-            String branchid= service.fetchBranch(username);
-            String classid=service.fetchStudentClassid(username);
+            ArrayList alstCorrectAns=null;
+            ArrayList alstWrongAns = null;
+            
+            String userid=(String)session.getAttribute("username");
+            String testid=(String)session.getAttribute("testid");
+            System.out.println(userid+testid);
+            if(session.getAttribute("alstWrongAns")!=null)
+            alstWrongAns=(ArrayList)session.getAttribute("alstWrongAns");
+            if(session.getAttribute("alstCorrectAns")!=null)
+            alstCorrectAns=(ArrayList)session.getAttribute("alstCorrectAns");
+            
+            if (request.getParameter("group") != null) {
+            String quesno=request.getParameter("quesno");
+            
+            TestsService testsService = new TestsService();
+            String ans=testsService.getAns(Integer.parseInt(quesno));
+            String stuans = request.getParameter("group");
             
             
-            ArrayList alstTestDetails=service.fetctStudentTestDetails(branchid, classid);
-            TestNoticeBean testNoticeBean=null;
-            ArrayList alstDetail=new ArrayList();
-            for(int i=0;i<alstTestDetails.size();i++){
-                
-                testNoticeBean=(TestNoticeBean)alstTestDetails.get(i);
-                
-                String testid=testNoticeBean.getTestid();
-                String status=service.getStudentStatus(testid,username);
-                testNoticeBean.setSstatus(status);
-                System.out.println("testbean"+testNoticeBean);
-                alstDetail.add(testNoticeBean);
+            if(ans.equalsIgnoreCase(stuans)){
+                alstCorrectAns.add("y");
+                session.setAttribute("alstCorrectAns",alstCorrectAns);
             }
-            request.setAttribute("alstTestDetails", alstTestDetails);
-            request.setAttribute("alstDetail", alstDetail);
-     
+            else{
+                alstWrongAns.add("n");
+                session.setAttribute("alstWrongAns",alstWrongAns);
+            }
+        }
+            
+            int marks=alstCorrectAns.size();
             
             
             
             
-            RequestDispatcher dispatcher=request.getRequestDispatcher("dashboard/studenttestview.jsp");
-            dispatcher.forward(request, response);
+            TestsService testsService=new TestsService();
+           int i= testsService.insertResult(userid, testid,marks);
+            if(i==1){
+                System.out.println("result inserted");
+            }
+            
+            response.sendRedirect("DashboardServlet");
             
         }
     }

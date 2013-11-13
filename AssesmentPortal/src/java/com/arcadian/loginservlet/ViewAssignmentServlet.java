@@ -106,11 +106,9 @@ public class ViewAssignmentServlet extends HttpServlet {
        int i= assignmentService.updateAssignmentFolder(userid, assignmentid, marks);
        
        if(i==1){
-           
            System.out.println("submiited");
        }
-       
-        processRequest(request, response);
+       processRequest(request, response);
     }
 
     /**

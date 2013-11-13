@@ -13,10 +13,21 @@ public class UserClassesBean {
     
     String userid;
     String classid;
+    String branchid;
     String subjectid;
     boolean status;
     String classname;
 String subjectname;
+
+    public String getBranchid() {
+        return branchid;
+    }
+
+    public void setBranchid(String branchid) {
+        this.branchid = branchid;
+    }
+
+
 
     public String getSubjectname() {
         return subjectname;

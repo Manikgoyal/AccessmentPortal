@@ -64,8 +64,7 @@
                                 <tbody>
                                     <tr>
                                         <td><h5>Message :</h5>
-                                            <textarea name="message" rows="6" cols="" maxlength="450">
-                                            </textarea></td>
+                                            <textarea name="message" placeholder="Remember, be nice!" cols="100" rows="1" style="width: 900px;height: 100px;"></textarea></td>
 
                                     </tr>
                                     <tr>
@@ -79,7 +78,7 @@
                         </form>
                         <table>
                             <tr><td>
-                                    <table class="box-table-b">
+                                    <table class="box-table-a">
                                         <caption>Inbox</caption>
                                         <thead>
                                             <tr>
@@ -99,9 +98,10 @@
 
 
                                                 </tr> </tbody></c:forEach>
-                                    </table>  </td><td><table class="box-table-c"></table></td>
+                                    </table>  </td>
                                 <td>
-                                        <table class="box-table-b">
+                                       </td></tr></table>
+                         <table class="box-table-a">
                                             <caption>Sent Messages</caption>
                                             <thead>
                                                 <tr>
@@ -119,13 +119,12 @@
                                                     <td>${message.messageid}</td> 
                                                     <td>${message.subject}</td> 
                                                     <td>${message.receiver}</td> 
-                                                     
-
+                                                    <td></td> 
                                                     <td><input type="checkbox" name="msg viewed" value="ON" disabled="disabled" /></td>
 
                                                 </tr> </c:forEach></tbody>
 
-                                    </table></td></tr></table>
+                                    </table>
                     </section>
                 </div> </div>
 

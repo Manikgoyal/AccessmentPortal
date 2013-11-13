@@ -55,6 +55,7 @@
                         <c:set var="now" value="<%=new java.util.Date()%>" />
                                     <table class="box-table-a">
                                         <thead>
+                                        <th>Test id</th>
                                         <th>Test Name</th>
                                         <th>Subject Id</th>
                                         <th>Max Marks</th>
@@ -64,8 +65,9 @@
                                         </thead>
                                         
                                         <tbody>
-                                        <c:forEach items="${alstTestDetails}" var="test">
+                                        <c:forEach items="${alstDetail}" var="test">
                                             <tr>
+                                                <td>${test.testid}</td>
                                                 <td>${test.testname}</td>
                                                 <td>${test.subjectid}</td>
                                                 <td>${test.maximarks}</td>
@@ -76,22 +78,30 @@
                                                 <fmt:formatDate var="time" value="${now}" pattern="HH:mm:ss"/>
                                                 <div id="txt"></div>
                                                 <c:choose>
-                                                    <c:when test="${test.status eq 'false' && date <= test.dateoftest}">
+                                                    <c:when test="${date < test.dateoftest && test.sstatus eq ''}">
                                                         <td><input type="submit" value="Start Test"  disabled/></td>        
                                                     </c:when>
-                                                    <c:when test="${test.status eq 'true' && (date == test.dateoftest)}">
-                                                        <td><input type="submit" value="Start Test" /></td>        
+                                                    <c:when test="${test.status eq 'true' && (date == test.dateoftest) && test.sstatus eq ''}">
+                                                    <td><form action="dashboard/guidelines.jsp" method="post">
+                                                            <input type="hidden" name="testid" value="${test.testid}"/>
+                                                            <button type="submit">Start Test</button>
+                                                        </form></td>        
                                                     </c:when>
-                                                            <c:otherwise>
-                                                            <td> Test Finished</td>
-                                                            </c:otherwise>
+                                                    <c:when test="${test.status eq 'false' && (date == test.dateoftest) && test.sstatus eq ''}">
+                                                    <td><input type="submit" value="Start Test"  disabled/></td>        
+                                                    </c:when>
+                                                    <c:when test="${test.sstatus eq 'false'}">
+                                                    <td>You have attempted the test</td>        
+                                                    </c:when>
+                                                    <c:when test="${test.sstatus eq '' && date > test.dateoftest}">
+                                                    <td>You missed the test</td>        
+                                                    </c:when>
                                                         
-                                                </c:choose>
-                                                
-                                                
-                                                
-                                                    
-                                            </tr></c:forEach>
+                                                            <c:otherwise>
+                                                            <td>Test Finished</td>
+                                                            </c:otherwise>
+                                                        </c:choose>
+                                             </tr></c:forEach>
                                         </tbody>
                                     </table>
                                

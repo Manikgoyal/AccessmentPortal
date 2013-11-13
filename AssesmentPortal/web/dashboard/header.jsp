@@ -21,7 +21,7 @@
                             <li><img src="<%=request.getContextPath()%>/dashboard/img/home_img.jpg" alt="" title=""></li>   
                             <li><img src="<%=request.getContextPath()%>/dashboard/img/chat_img.jpg" alt="" title=""></li>
                             <li><img src="<%=request.getContextPath()%>/dashboard/img/percent.jpg" alt="" title=""></li>
-                            <li><a href="../LogoutServlet"><img src="<%=request.getContextPath()%>/dashboard/img/logout.jpg" alt="" title="" style="height: 30px; margin:-4px 0px 0px 10px;" ></a></li>
+                            <li><a href="<%=request.getContextPath()%>/LogoutServlet"><img src="<%=request.getContextPath()%>/dashboard/img/logout.jpg" alt="" title="" style="height: 30px; margin:-4px 0px 0px 10px;" ></a></li>
                         </ul>
 
                     </article>

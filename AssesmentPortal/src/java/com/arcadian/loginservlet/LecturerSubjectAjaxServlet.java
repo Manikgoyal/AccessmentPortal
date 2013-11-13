@@ -44,7 +44,7 @@ public class LecturerSubjectAjaxServlet extends HttpServlet {
             
            
             AssignLecturerService assignLecturerService=new AssignLecturerService();
-            ArrayList alstAssignLecture=assignLecturerService.getSubjectId(username, classid);
+            ArrayList alstAssignLecture=assignLecturerService.getSubjectId(classid);
             request.setAttribute("alstAssignLecture",alstAssignLecture);
             request.setAttribute("classid",classid);
             

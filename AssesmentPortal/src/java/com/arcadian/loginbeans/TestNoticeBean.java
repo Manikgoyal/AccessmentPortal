@@ -10,9 +10,19 @@ package com.arcadian.loginbeans;
  * @author manik
  */
 public class TestNoticeBean {
-    String testid, testname, subjectid, classid, maximarks, dateoftest, maxitime,branchid;
+    String testid, testname, subjectid, classid, maximarks, dateoftest, maxitime,branchid,sstatus;
     Boolean status;
 
+    public String getSstatus() {
+        return sstatus;
+    }
+
+    public void setSstatus(String sstatus) {
+        this.sstatus = sstatus;
+    }
+
+    
+    
     public String getTestid() {
         return testid;
     }

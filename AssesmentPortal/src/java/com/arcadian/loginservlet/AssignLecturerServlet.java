@@ -36,25 +36,23 @@ public class AssignLecturerServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            
-            HttpSession session=request.getSession();
-            String username=(String)session.getAttribute("username");
-            
-            AssignLecturerService assignLecturerService=new AssignLecturerService();
-            ArrayList asltAssignLecturerId=assignLecturerService.getLecturerId(username);
-            request.setAttribute("asltAssignLecturerId",asltAssignLecturerId);
-            
-            ArrayList alstLecturerClassId=assignLecturerService.getLecturerClassID(username);
-            request.setAttribute("alstLecturerClassId",alstLecturerClassId);
-            
-           
-            
-            
-            
-                RequestDispatcher dispatcher=request.getRequestDispatcher("dashboard/assignlecturer.jsp");
+
+            HttpSession session = request.getSession();
+            String username = (String) session.getAttribute("username");
+
+            AssignLecturerService assignLecturerService = new AssignLecturerService();
+            ArrayList asltAssignLecturerId = assignLecturerService.getLecturerId(username);
+            request.setAttribute("asltAssignLecturerId", asltAssignLecturerId);
+
+            ArrayList alstLecturerClassId = assignLecturerService.getLecturerClassID(username);
+            request.setAttribute("alstLecturerClassId", alstLecturerClassId);
+
+            ArrayList alstAssignLecturer = assignLecturerService.fetchAssignLecturer(username);
+            request.setAttribute("alstAssignLecturer", alstAssignLecturer);
+
+            RequestDispatcher dispatcher = request.getRequestDispatcher("dashboard/assignlecturer.jsp");
             dispatcher.forward(request, response);
-            
-            
+
         }
     }
 
@@ -71,11 +69,7 @@ public class AssignLecturerServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String classid=request.getParameter("classid");
-        
-        if(classid!=null){
-           
-        }
+
         processRequest(request, response);
     }
 
@@ -91,6 +85,18 @@ public class AssignLecturerServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        String username = (String) session.getAttribute("username");
+        String lectid = request.getParameter("lectid");
+        String classid = request.getParameter("classid");
+        String subjectid = request.getParameter("subjectid");
+
+        AssignLecturerService assignLecturerService = new AssignLecturerService();
+        int i = assignLecturerService.assignLecturer(classid, lectid, subjectid, username);
+        if (i == 1) {
+            System.out.println("lecturer assigned");
+        }
+
         processRequest(request, response);
     }
 

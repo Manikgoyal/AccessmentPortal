@@ -252,4 +252,102 @@ public class TestsService {
     }
     
     
+    public ArrayList getQuestion(String testid){
+        
+       ArrayList alstQuestion=new ArrayList();
+       String query="select quesno from testdata where testid='"+testid+"' and status=1 limit 20";
+       try {
+       rs=smt.executeQuery(query);
+       
+       while(rs.next()){
+           alstQuestion.add(rs.getString("quesno"));
+       }
+        } catch (SQLException e) {
+            System.out.println("Exception in getQuestion="+e);
+        }
+        
+        return alstQuestion;
+        
+    }
+    
+    public ArrayList getQuestionAns(int quesno){
+        
+       ArrayList alstQuestion=new ArrayList();
+       TestDataBean testDataBean=null;
+       String query="select * from testdata where quesno='"+quesno+"'";
+       try {
+       rs=smt.executeQuery(query);
+       
+       while(rs.next()){
+           testDataBean=new TestDataBean();
+           
+           testDataBean.setQuestion(rs.getString("question"));
+           testDataBean.setOpt1(rs.getString("opt1"));
+           testDataBean.setOpt2(rs.getString("opt2"));
+           testDataBean.setOpt3(rs.getString("opt3"));
+           testDataBean.setOpt4(rs.getString("opt4"));
+           testDataBean.setAns(rs.getString("ans"));
+           testDataBean.setQuesno(quesno);
+           alstQuestion.add(testDataBean);
+       }
+        } catch (SQLException e) {
+            System.out.println("Exception in getQuestionAns="+e);
+        }
+        
+        return alstQuestion;
+        
+    }
+    public String getAns(int quesno){
+        
+       String ans="";
+       String query="select ans from testdata where quesno='"+quesno+"'";
+       try {
+       rs=smt.executeQuery(query);
+       
+       while(rs.next()){
+           ans=rs.getString("ans");
+       }
+        } catch (SQLException e) {
+            System.out.println("Exception in getQuestionAns="+e);
+        }
+        
+        return ans;
+        
+    }
+    
+    public int insertResult(String userid,String testid,int marks){
+        int i=0;
+        
+        try {
+            String query="insert into testfolder (userid,testid,marks,status) values('"+userid+"','"+testid+"',"+marks+",0)";
+            i=smt.executeUpdate(query);
+            
+        } catch (SQLException e) {
+            System.out.println("Exception in insert Result="+e);
+        }
+        
+        return i;
+    }
+    
+    public String getStudentStatus(String testid,String userid){
+        
+        String status="";
+        
+        try {
+            String query="select status from testfolder where testid='"+testid+"' and userid='"+userid+"' ";
+            rs=smt.executeQuery(query);
+            
+            while(rs.next()){
+               boolean b=rs.getBoolean("status");
+                status=Boolean.toString(b);
+            }
+            
+        } catch (SQLException e) {
+            System.out.println("Exception in getStatus="+e);
+        }
+        
+        return status;
+    }
+    
+    
 }

@@ -26,11 +26,7 @@
         <link href="<%=request.getContextPath()%>/dashboard/dashcss/button.css" rel="stylesheet" >
         <script src="<%=request.getContextPath()%>/pages/lecturersubject.js"></script>
             
-        <script>
-            
-           
-            
-        </script>
+       
     </head>
     <body>
         <div class="wrapper1">
@@ -50,7 +46,7 @@
                 <div class="prof">   
                     <h4>Users</h4>
                     <section class="centr">
-                        
+                        <form name="assignlect" action="AssignLecturerServlet" method="post">
                         <table class="box-table-a">
                             <caption>Assigned Lecturer List</caption>
                             <thead>
@@ -63,12 +59,12 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                <td> <select><c:forEach items="${asltAssignLecturerId}" var="lectureid">
+                                    <td> <select name="lectid"><c:forEach items="${asltAssignLecturerId}" var="lectureid">
                                        
                                             <option>${lectureid}</option>
                                         
                                  </c:forEach></select></td>
-                                <td><select onclick="showUser2(this.value)">
+                                    <td><select onclick="showUser2(this.value)" name="classid">
                                         <option>Select Class</option>
                                         <c:forEach items="${alstLecturerClassId}" var="classid">
                                             <option value="${classid}">${classid}</option>
@@ -83,13 +79,13 @@
 
                                             </select></div>
                                 </td>
-                                <td><a href="#" onclick="">Assign Lecture</a></td>
+                                <td><a href="#" onclick="JAVASCRIPT:assignlect.submit()">Assign Lecture</a></td>
                                    </tr>  
                             </tbody>
                             
                         </table>
 
-                        
+                        </form>
                         
                          <table class="box-table-a">
                             <caption>Assigned List</caption>
@@ -98,12 +94,20 @@
                                     <th scope="col">S.NO</th>
                                     <th scope="col">UserName</th>
                                     <th scope="col">Class</th>
+                                    <th scope="col">Subject</th>
                                     <th scope="col">Actions</th>
                                 </tr>
                             </thead>
-                            
                             <tbody>
-                                
+                                <c:forEach items="${alstAssignLecturer}" var="alstlecturer" varStatus="sno">
+                                    <tr>
+                                        <td>${sno.index+1}</td>
+                                        <td>${alstlecturer.userid}</td>
+                                        <td>${alstlecturer.classid}</td>
+                                        <td>${alstlecturer.subjectid}</td>
+                                        <td>Actions</td>
+                                    </tr>
+                                </c:forEach>
                             </tbody>
                             
                         </table>

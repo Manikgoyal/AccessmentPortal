@@ -10,7 +10,7 @@ package com.arcadian.loginbeans;
  * @author manik
  */
 public class TestDataBean {
-    
+    int quesno;
     String branchid;
     String classid;
     String subjectid;
@@ -20,6 +20,14 @@ public class TestDataBean {
     String opt3;
     String opt4;
     String ans;
+
+    public int getQuesno() {
+        return quesno;
+    }
+
+    public void setQuesno(int quesno) {
+        this.quesno = quesno;
+    }
 
     public String getBranchid() {
         return branchid;

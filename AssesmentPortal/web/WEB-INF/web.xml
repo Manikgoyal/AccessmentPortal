@@ -88,6 +88,14 @@
         <servlet-name>ViewAssignmentServlet</servlet-name>
         <servlet-class>com.arcadian.loginservlet.ViewAssignmentServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>QuestionServlet</servlet-name>
+        <servlet-class>com.arcadian.loginservlet.QuestionServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TestFinishServlet</servlet-name>
+        <servlet-class>com.arcadian.loginservlet.TestFinishServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
@@ -179,6 +187,14 @@
     <servlet-mapping>
         <servlet-name>ViewAssignmentServlet</servlet-name>
         <url-pattern>/ViewAssignmentServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>QuestionServlet</servlet-name>
+        <url-pattern>/QuestionServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TestFinishServlet</servlet-name>
+        <url-pattern>/TestFinishServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

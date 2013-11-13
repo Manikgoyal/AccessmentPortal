@@ -41,7 +41,7 @@
                 <div class="prof">   
                     <h4>Attendance</h4>
                     <section class="centr">
-
+                        <form name="markattendance" action="ViewIndividualAttendance" method="get">
                         <table class="box-table-a">
                             <caption>Subject List</caption>
                             <thead>
@@ -70,15 +70,25 @@
                                     <td><%=sub%></td>
                                     <td><%=attendance%></td>
                                     <td>9</td>
-                                    <td><input type="text" name="txtlectid" value="" /></td>
+                                    <td><select name="lectureid">
+                                            <option>lect1</option>
+                                            <option>lect2</option>
+                                            <option>lect3</option>
+                                            <option>lect4</option>
+                                            <option>lect5</option>
+                                            <option>lect6</option>
+                                            <option>lect7</option>
+                                            <option>lect8</option>
+                                            <option>lect9</option>
+                                        </select></td>
                                     
-                                    <td><a href="ViewIndividualAttendanceServlet">Mark Attendance</a></td>
+                                        <td><a href="#" onclick="JAVASCRIPT:markattendance.submit()">Mark Attendance</a></td>
                                 </tr><%}%>
                                 
                             
                             </tbody>
                         </table>
-
+                        </form>
 
                     </section>
                 </div>
